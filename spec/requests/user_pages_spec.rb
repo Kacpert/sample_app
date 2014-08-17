@@ -13,11 +13,11 @@ describe "UserPages" do
     describe "page" do
       it { should have_content("Update your profile") }
       it { should have_title("Edit user") }
-      it { should have_link('change', href: 'http://gravatar.com/emails') }
+      it { should have_link('Zmień', href: 'http://gravatar.com/emails') }
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before { click_button "Zapisz zmiany" }
 
       it { should have_content('error') }
     end
@@ -59,7 +59,7 @@ describe "UserPages" do
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_selector('div.alert.alert-success', text: 'Witaj') }
       end
     end
   end
